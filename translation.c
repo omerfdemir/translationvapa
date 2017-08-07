@@ -8,7 +8,7 @@
  
 
 
-int main()
+int main(int pid)
 
 {
 
@@ -35,7 +35,7 @@ int main()
 
     virtual_address = (unsigned long long)&a[1024];
     printf("virtual address = 0x%llx\n" ,virtual_address);
-   unsigned long long physicaladdress = syscall(332,virtual_address);
+   unsigned long long physicaladdress = syscall(332,0,virtual_address);
 	printf("physical address = 0x%llx\n",physicaladdress);
 	
 	scanf("%s",str);											
